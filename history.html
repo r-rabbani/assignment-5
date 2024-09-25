@@ -125,12 +125,12 @@ localStorage.setItem('donationHistory', JSON.stringify(donations));
 <script>
     // On page load, retrieve the balance from localStorage
     document.addEventListener("DOMContentLoaded", function() {
-        let balance = localStorage.getItem("balance") || 1000;
+        let balance = localStorage.getItem("balance") || 10000;
         document.getElementById("balanceDisplay").textContent = balance;
     });
 
     function donate(amount) {
-        let balance = localStorage.getItem("balance") || 1000;
+        let balance = localStorage.getItem("balance") || 10000;
         balance = balance - amount;
         localStorage.setItem("balance", balance);
         document.getElementById("balanceDisplay").textContent = balance;

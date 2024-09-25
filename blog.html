@@ -7,14 +7,30 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+    <style>
+        .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+}
+
+.sticky-buttons {
+    position: sticky;
+    top: 50px;
+    z-index: 999;
+    background-color: white;
+}
+
+    </style>
 <body>
     <main class="max-w-screen-xl mx-auto px-4 md:px-8 lg:px-16">
         <header class="py-5">
-            <div class="navbar bg-orange-50">
+            <div class="navbar bg-orange-50 navbar">
                 <div class="navbar-start">
                     <button class="btn btn-outline btn-success" onclick="window.location.href='index.html'">Home</button>
                 </div>
-                <div class="navbar-center">
+                <div class="navbar-center navbar-po">
                     <img src="assets/logo.png" alt="">
                     <a class="btn btn-ghost text-xl" onclick="window.location.href='index.html'">Donate Bangladesh</a>
                 </div>
@@ -25,6 +41,7 @@
                 </div>
             </div>
         </header>
+    
 
         <section class="py-10">
             <h1 class="text-4xl font-bold text-center mb-8">Stories of Help and Hope</h1>
