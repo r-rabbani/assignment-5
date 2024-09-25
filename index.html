@@ -8,6 +8,24 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Tailwind CSS/DaisyUI to Show/Hide Modal -->
+    <style>
+      .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      }
+      .modal-open {
+        display: flex;
+      }
+    </style>
+    
+
+
 </head>
 <body>
     <main class="max-w-screen-xl mx-auto px-4 md:px-8 lg:px-16">
@@ -44,6 +62,19 @@
         <main>
 
             <div class="space-y-5">
+
+              <!-- Modal HTML -->
+<div id="donationModal" class="modal">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg" id="modalTitle"></h3>
+    <p class="py-4">Thank you for contributing!</p>
+    <div class="modal-action">
+      <button class="btn" id="closeModal">Appreciated</button>
+    </div>
+  </div>
+</div>
+
+
                 <div class="card lg:card-side bg-base-100 w-full shadow-xl">
                     <figure class="p-5 rounded-3xl lg:w-1/2">
                       <img
