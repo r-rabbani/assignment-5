@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Bangladesh</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <main class="max-w-screen-xl mx-auto px-4 md:px-8 lg:px-16">
+        <header>
+            <!-- Navbar -->
+
+            <!-- <div class="relative">
+                <div class="fixed top-0 left-0 right-0"> -->
+                    <div class="navbar bg-orange-50 py-5">
+                        <div class="navbar-start">
+                            <button class="btn btn-success" onclick="window.location.href='blog.html'">Blog</button>
+
+        
+                        </div>
+                        <div class="navbar-center">
+                            <img src="assets/logo.png" alt="">
+                            <a class="btn btn-ghost text-xl" onclick="window.location.href='index.html'">Donate Bangladesh</a>
+                        </div>
+                        <div class="navbar-end flex">
+                          <img src="assets/coin.png" alt="">
+                          <h2 id="balanceAmount">2000 BDT</h2>
+                        </div>
+                      </div>
+                      <div class="flex justify-center gap-5 mt-10">
+                        <button class="btn btn-outline btn-success" onclick="window.location.href='index.html'">Donation</button>
+                        <button class="btn btn-outline btn-success" onclick="window.location.href='history.html'">History</button>
+
+                </div>
+            </div>
+                
+            
+        </header>
+
+        <main>
+
+            <div class="space-y-5">
+                <div class="card lg:card-side bg-base-100 w-full shadow-xl">
+                    <figure class="p-5 rounded-3xl lg:w-1/2">
+                      <img
+                        src="assets/noakhali.jpg"
+                        alt="flood" />
+                    </figure>
+                    <div class="card-body lg:w-1/2">
+                      <h2 class="card-title">Donate for flood in Noakhali, Bangladesh</h2>
+                      <p>Help the flood-affected people of Noakhali rebuild their lives. The recent devastating floods have left many without shelter, food, and basic necessities. Your donation can provide critical aid to those in need.</p>
+                      <div class="card-actions justify-end">
+                        <input type="text" id="donationAmount" placeholder="Your Donation Amount" class="w-full p-3" oninput="validateInput()">
+
+                        <button class="btn btn-primary w-full" onclick="donate()">Donate Now</button>
+
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="card lg:card-side bg-base-100 w-full shadow-xl">
+                    <figure class="p-5 rounded-3xl lg:w-1/2">
+                      <img
+                        src="assets/feni flood.jpeg"
+                        alt="flood" />
+                    </figure>
+                    <div class="card-body lg:w-1/2">
+                      <h2 class="card-title">Donate for Flood Relief in Feni,Bangladesh</h2>
+                      <p>Feni has been hit hard by severe flooding, leaving families stranded and in urgent need of assistance. Join us in providing emergency relief and essential supplies to those affected by this disaster.</p>
+                      <div class="card-actions justify-end">
+                        <input type="text" id="donationAmount" placeholder="Your Donation Amount" class="w-full p-3" oninput="validateInput()">
+
+                        <button class="btn btn-primary w-full" onclick="donate()">Donate Now</button>
+
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="card lg:card-side bg-base-100 w-full shadow-xl">
+                    <figure class="p-5 rounded-3xl lg:w-1/2">
+                      <img
+                        src="assets/quota movement.jpg"
+                        alt="flood" />
+                    </figure>
+                    <div class="card-body lg:w-1/2">
+                      <h2 class="card-title">Aid for Injured in the Quota Movement</h2>
+                      <p>Support the families and survivors of the tragic student movement, where thousands of students were killed or injured fighting for their rights. Your donation will help provide medical care, financial aid, and support to those who have suffered unimaginable loss.</p>
+                      <div class="card-actions justify-end">
+                        <input type="text" id="donationAmount" placeholder="Your Donation Amount" class="w-full p-3" oninput="validateInput()">
+
+                        <button class="btn btn-primary w-full" onclick="donate()">Donate Now</button>
+
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </main>
+
+        <script src="styles/donation.js"></script>
+
+        <footer class="py-5 text-center">
+          <p>© 2024 Donate Bangladesh. All rights reserved.</p>
+      </footer>
+    </main>
+</body>
+</html>
