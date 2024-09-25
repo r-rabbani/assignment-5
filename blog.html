@@ -20,7 +20,8 @@
                 </div>
                 <div class="navbar-end">
                     <img src="assets/coin.png" alt="">
-                    <h2 id="balanceAmount">2000 BDT</h2>
+                    <h2 id="balanceAmount"> <span id="balanceDisplay"></span>
+                        BDT</h2>
                 </div>
             </div>
         </header>
@@ -100,6 +101,22 @@
         <footer class="py-5 text-center">
             <p>© 2024 Donate Bangladesh. All rights reserved.</p>
         </footer>
+
+        <script>
+            // On page load, retrieve the balance from localStorage
+            document.addEventListener("DOMContentLoaded", function() {
+                let balance = localStorage.getItem("balance") || 10000;
+                document.getElementById("balanceDisplay").textContent = balance;
+            });
+        
+            function donate(amount) {
+                let balance = localStorage.getItem("balance") || 10000;
+                balance = balance - amount;
+                localStorage.setItem("balance", balance);
+                document.getElementById("balanceDisplay").textContent = balance;
+            }
+        </script>
+        
 
         <script src="styles/donation.js"></script>
     </main>

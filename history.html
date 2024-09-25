@@ -47,7 +47,8 @@
                         </div>
                         <div class="navbar-end flex">
                           <img src="assets/coin.png" alt="">
-                          <h2 id="balanceAmount">2000 BDT</h2>
+                          <h2 id="balanceAmount"> <span id="balanceDisplay"></span>
+                            BDT</h2>
                         </div>
                       </div>
                       <div class="flex justify-center gap-5 mt-10">
@@ -73,6 +74,21 @@
             </section>
         </main>
 
+        <script>
+            // On page load, retrieve the balance from localStorage
+            document.addEventListener("DOMContentLoaded", function() {
+                let balance = localStorage.getItem("balance") || 10000;
+                document.getElementById("balanceDisplay").textContent = balance;
+            });
+        
+            function donate(amount) {
+                let balance = localStorage.getItem("balance") || 10000;
+                balance = balance - amount;
+                localStorage.setItem("balance", balance);
+                document.getElementById("balanceDisplay").textContent = balance;
+            }
+        </script>
+        
 
         <script>
             // donation history in Local Sotrage
@@ -105,6 +121,21 @@ localStorage.setItem('donationHistory', JSON.stringify(donations));
 
             }
         </script>
+
+<script>
+    // On page load, retrieve the balance from localStorage
+    document.addEventListener("DOMContentLoaded", function() {
+        let balance = localStorage.getItem("balance") || 1000;
+        document.getElementById("balanceDisplay").textContent = balance;
+    });
+
+    function donate(amount) {
+        let balance = localStorage.getItem("balance") || 1000;
+        balance = balance - amount;
+        localStorage.setItem("balance", balance);
+        document.getElementById("balanceDisplay").textContent = balance;
+    }
+</script>
 
         <script src="styles/donation.js"></script>
 
