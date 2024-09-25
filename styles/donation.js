@@ -4,6 +4,8 @@ function donate(button) {
     const donationInput = card.querySelector('input');
     const balanceElement = document.getElementById("balanceAmount");
 
+    
+
     // current balance and donation amount
     let currentBalance = parseInt(balanceElement.innerText.replace(' BDT', ''));
     let donationAmount = parseInt(donationInput.value);
@@ -13,6 +15,10 @@ function donate(button) {
         // Subtract the donation amount from the current balance
         let newBalance = currentBalance - donationAmount;
         balanceElement.innerText = newBalance + " BDT"; 
+
+        // new balance in local storage
+        localStorage.setItem('balance', newBalance);
+
 
         // Clear the donation field
         donationInput.value = '';
@@ -46,3 +52,5 @@ document.querySelectorAll('.btn-primary').forEach((button) => {
         donate(this); // Pass the clicked button to the donate function
     });
 });
+
+

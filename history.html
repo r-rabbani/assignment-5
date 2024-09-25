@@ -19,6 +19,18 @@
 <body>
     <main class="max-w-screen-xl mx-auto px-4 md:px-8 lg:px-16">
         <header>
+
+            <!-- Modal for No Donations -->
+        <div id="noDonationsModal" class="modal fixed inset-0 bg-black bg-opacity-50 justify-center items-center">
+            <div class="modal-box">
+                <h3 class="font-bold text-lg">No Donations Yet</h3>
+                <p class="py-4">No donations have been gathered so far. Please contribute to help those in need!</p>
+                <div class="modal-action">
+                    <button class="btn" id="closeModal">Close</button>
+                </div>
+            </div>
+        </div>
+
             <!-- Navbar -->
 
             <!-- <div class="relative">
@@ -53,11 +65,46 @@
             <section class="py-10">
                 <h1 class="text-4xl font-bold text-center mb-8">Donation History</h1>
     
-                <div id="donationHistory" class="text-center text-lg">
-                    <!-- Donation history will be displayed here -->
-                </div>
+                <!-- Donation History Cards -->
+        <div id="donationHistory">
+            <!-- Cards will be inserted here -->
+        </div>
+
             </section>
         </main>
+
+
+        <script>
+            // donation history in Local Sotrage
+            const donations = JSON.parse(localStorage.getItem('donationHistory')) || [];
+        
+            // Display donation history or message if no donations have been made
+            const donationHistoryDiv = document.getElementById('donationHistory');
+            
+            if (donations.length === 0) {
+                // If no donations, show a message
+                donationHistoryDiv.innerHTML = `
+                    <div class="card bg-gray-100 p-5">
+                        <h2 class="text-xl font-bold">No donations have been gathered.</h2>
+                    </div>
+                `;
+            } else {
+                // Show all donations in cards
+                donations.forEach((donation, index) => {
+                    const donationCard = `
+                        <div class="card bg-white shadow-md p-5 mb-4">
+                            <h3 class="text-lg font-semibold">Donation ${index + 1}: ${donation.amount} BDT</h3>
+                            <p>Cause: ${donation.cause}</p>
+                        </div>
+                    `;
+                    donationHistoryDiv.innerHTML += donationCard;
+                });
+                const donation = { amount: donationAmount, cause: cardTitle };
+donations.push(donation);
+localStorage.setItem('donationHistory', JSON.stringify(donations));
+
+            }
+        </script>
 
         <script src="styles/donation.js"></script>
 
