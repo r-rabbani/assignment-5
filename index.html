@@ -117,7 +117,7 @@
                       <div class="card-actions justify-end">
                         <input type="text" id="donationAmount" placeholder="Your Donation Amount" class="w-full p-3" oninput="validateInput()">
 
-                        <button class="btn btn-primary w-full" onclick="donate()">Donate Now</button>
+                        <button class="btn btn-primary w-full" onclick="donateAndRedirect(100)">Donate Now</button>
 
                       </div>
                     </div>
@@ -135,7 +135,7 @@
                       <div class="card-actions justify-end">
                         <input type="text" id="donationAmount" placeholder="Your Donation Amount" class="w-full p-3" oninput="validateInput()">
 
-                        <button class="btn btn-primary w-full" onclick="donate()">Donate Now</button>
+                        <button class="btn btn-primary w-full" onclick="donateAndRedirect(100)">Donate Now</button>
 
                       </div>
                     </div>
@@ -144,6 +144,9 @@
         </main>
 
         <script>
+
+          localStorage.setItem('donateBalance', {})
+
           // On page load, retrieve the balance from localStorage
           document.addEventListener("DOMContentLoaded", function() {
               let balance = localStorage.getItem("balance") || 10000;

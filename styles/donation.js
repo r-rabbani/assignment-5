@@ -53,4 +53,3 @@ document.querySelectorAll('.btn-primary').forEach((button) => {
     });
 });
 
-
